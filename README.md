@@ -1,2 +1,2 @@
 # scaling-parakeet
-The name is randomly generated.
+The repository is created for stuco 98-177 Building Personal Websites. Lecture 1 on 2020/01/16.
