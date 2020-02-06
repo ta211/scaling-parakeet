@@ -1,3 +1,9 @@
+img{
+ 	border: 7px #e2e2e2 solid;
+ }
+
+/*---------------------- nav -------------------*/
+
 .nav-bar {
 	position: fixed;
 	width: 15%;
