@@ -17,7 +17,7 @@ img{
 	text-align: center;
 	color: #f3f3f3;
 	font-family: American Typewriter, serif;
-	font-size: 13px;
+	font-size: 15px;
 	line-height: 27px;
 	background-color: purple;
 }
@@ -27,7 +27,7 @@ img{
 .main {
 	width: 75%;
 	margin-left: 25%;
-	background-color: 
+	background-color: azure;
 }
 
 .main-title {
