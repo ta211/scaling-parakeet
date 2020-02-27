@@ -1,3 +1,9 @@
+:root{
+	--tab-quiet: green;
+	--tab-jump: lightseagreen;
+}
+
+
 img{
  	border: 7px #e2e2e2 solid;
  }
@@ -6,27 +12,34 @@ img{
 
 .nav-bar {
 	position: fixed;
-	width: 20%;
+	width: 15%;
 	height: 100%;
-	background-color: green;
+	background-color: purple;
+	/*position: sticky;
+	top: 0;*/
 }
 
 .nav-bar .tab {
 	width: 100%;
 	padding: 10px 0 10px 0;
 	text-align: center;
+	/*display: inline-block;*/
 	color: #f3f3f3;
 	font-family: American Typewriter, serif;
 	font-size: 15px;
 	line-height: 27px;
-	background-color: purple;
+	background-color: var(--tab-quiet);
 }
 
+.nav-bar .tab:hover{
+	background-color: var(--tab-jump)
+}
 /*---------------------- main -------------------*/
 
 .main {
-	width: 75%;
-	margin-left: 25%;
+	width: 80%;
+	margin-left: 20%;
+	padding: 10px 0 10px 0;
 	background-color: azure;
 }
 
