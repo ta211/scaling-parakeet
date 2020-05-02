@@ -37,9 +37,30 @@
 
 
 <script>
+	var browserWidth;
+	var browserHeight;
+	var resetPosition = false;
+	var enableAnimations = false;
+  var reduceMotionQuery = matchMedia("(prefers-reduced-motion)");
+
+	function setAccessibilityState() {
+    if (reduceMotionQuery.matches) {
+      enableAnimations = false;
+    } else { 
+      enableAnimations = true;
+    }
+  }
+	setAccessibilityState();
+	
+	reduceMotionQuery.addListener(setAccessibilityState);
+
 	function setup() {
-		
+		if (enableAnimations) {
+			window.addEventListener("DOMContentLoaded", , false);
+			window.addEventListener("resize", setResetFlag, false);
+		}
 	}
+	setup();
 
 	function DivingBird(element, speed, xPos, yPos) {
 		this.element = element;
