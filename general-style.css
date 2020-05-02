@@ -54,7 +54,7 @@ body {
 
 /*---------------------- animation elements ----------------------*/
 .parakeet{
-	
+
 }
 
 /*---------------------- nav -------------------*/
@@ -68,7 +68,7 @@ body {
 	top: 0;*/
 }
 
-.nav-bar .tab {
+.nav-bar .tab, .nav-bar .tab_link {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -85,7 +85,12 @@ body {
 }
 
 .nav-bar .tab:hover{
-	background-color: var(--tab-jump)
+	background-color: var(--tab-jump);
+}
+
+.nav-bar .tab_link:hover{
+	background-color: var(--tab-jump);
+  cursor: pointer;
 }
 /*---------------------- main -------------------*/
 
