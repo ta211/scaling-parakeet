@@ -1,11 +1,8 @@
 :root{
+	--scale-small:0.7;
+	--scale-large:1.3;
 	--tab-quiet: green;
 	--tab-jump: lightseagreen;
-}
-
-
-img{
- 	border: 7px #e2e2e2 solid;
 }
 
 /*---------------------- body ----------------------*/
@@ -56,8 +53,26 @@ body {
 
 
 /*---------------------- animation elements ----------------------*/
-.parakeet{
 
+#parakeet{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	animation-duration: 1s;
+	animation-name: changewidth;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+#parakeet:hover{
+  animation-play-state: paused;
+}
+
+@keyframes changewidth {
+	from {
+		transform: scale(var(--scale-small));
+	} 
+	to {
+		transform: scale(var(--scale-large));
+	}
 }
 
 /*---------------------- nav -------------------*/
@@ -108,4 +123,9 @@ body {
 	font-weight: bold;
 	color: #545454;
 	float: left;
+}
+
+
+.crossFade {
+
 }

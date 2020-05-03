@@ -8,8 +8,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="general-style.css">
 	<link rel="icon" href="images/icon-xinzhi.png">                    <!-- Insert Icon -->
-	<script src="./Give Me a Title!_files/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src='http://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
 </head>
 
 <body data-gr-c-s-loaded="true">
@@ -24,71 +24,36 @@
 	</div>
 
 	<div class="main">
-		<center><img src=images/xinzhi-still.png width="200"></center>
+		<center><img id="parakeet" src=images/xinzhi-still.png width="200"></center>
+		<script type="text/javascript">
+			var parakeet = document.getElementById('parakeet');
+
+		  function setRandomScale() {
+				var size_small = Math.random();
+				var size_large = Math.random() + 1;
+				var keyframe_changewidth = '\
+				@keyframes changewidth {\
+					from {\
+						transform: scale('+ --scale-small + ');\
+					}\
+					to {\
+						transform: scale('+ --scale-large + ');\
+					}\
+				}'
+				parakeet.insertRule(keyframe_changewidth);
+			}
+
+			setInterval(setRandomScale, 5000);
+		</script>
     	<p class="introduction" id="site-intro"> 
 				Scaling parakeet is a kind of parakeet with the ability to scale its size. 
-				When captured by human beings, a scaling parakeet would fake to be a normal parakeet and basically lose its superpower of scaling. Therefore, scientists haven't yet confirmed whether scaling parakeets' weight change magically with its volume scaling. Together with superpowered liberty llama and Oedipus grass, scaling parakeets are the most common seen fauna on Earth265. </p>
+				When captured by human beings, a scaling parakeet would fake to be a normal parakeet and basically lose its superpower of scaling (<a style="font-weight: bold; color: olive; text-decoration: underline;">Try hover it!</a>). Therefore, scientists haven't yet confirmed whether scaling parakeets' weight change magically with its volume scaling. Together with superpowered liberty llama and Oedipus grass, scaling parakeets are the most common seen fauna on Earth265. </p>
 
     	<!-- <h1 style="text-align:center;color:crimson;background-color:skyblue;"> Hi Scarlett!!! </h1> -->
     	
 
 	</div>
 
-    <script type="text/javascript" src="./Give Me a Title!_files/interactions.js"></script>    <!-- Insert JQuery Script -->
-</body></html>
+</body>
 
-
-<script>
-	var browserWidth;
-	var browserHeight;
-	var resetPosition = false;
-	var enableAnimations = false;
-  var reduceMotionQuery = matchMedia("(prefers-reduced-motion)");
-
-	function setAccessibilityState() {
-    if (reduceMotionQuery.matches) {
-      enableAnimations = false;
-    } else { 
-      enableAnimations = true;
-    }
-  }
-	setAccessibilityState();
-	
-	reduceMotionQuery.addListener(setAccessibilityState);
-
-	function setup() {
-		if (enableAnimations) {
-			window.addEventListener("DOMContentLoaded", , false);
-			window.addEventListener("resize", setResetFlag, false);
-		}
-	}
-	setup();
-
-	function DivingBird(element, speed, xPos, yPos) {
-		this.element = element;
-		this.speed = speed;
-    this.xPos = xPos;
-		this.yPos = yPos;
-		
-		this.counter = 0;
-	}
-
-	DivingBird.prototype.update = function () {
-		this.counter += this.speed / 5000;
-    this.xPos += this.sign * this.speed * Math.cos(this.counter) / 40;
-    this.yPos += Math.sin(this.counter) / 40 + this.speed / 30;
-		this.scale = .5 + Math.abs(10 * Math.cos(this.counter) / 20);
-
-		if (this.yPos > browserHeight) {
-			return;
-		}
-		
-		setTransform(Math.round(this.xPos), Math.round(this.yPos), this.element);
-	}
-
-	function setTransform(xPos, yPos, element) {
-		element.style.transform = `translate(${xPos}, ${yPos}px) scale(${scale}, ${scale})`;
-	}
-
-
-</script>
+</html>
